@@ -117,8 +117,7 @@ T* QueueLinked<T>::dequeue()
 
     else if(sze == 1)
     {
-      item = back->getItem();     
-      back = NULL;
+      item = back->getItem();
       delete back;
       sze--;
       }
@@ -132,6 +131,7 @@ T* QueueLinked<T>::dequeue()
       back->setNext(curr);
       item = prev->getItem();
       delete prev;
+      sze--;
      }
 
     return item;
