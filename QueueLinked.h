@@ -112,6 +112,7 @@ T* QueueLinked<T>::dequeue()
 
     if(sze > 0)
     {
+<<<<<<< HEAD
        if(sze == 1)
        {
           item = back -> getItem();
@@ -126,6 +127,25 @@ T* QueueLinked<T>::dequeue()
        }
        sze--;
     }
+=======
+      item = back->getItem();
+      delete back;
+      sze--;
+      }
+
+    else
+    {    
+      NextNode<T>* prev = NULL;
+      NextNode<T>* curr = back->getNext();
+      prev = curr;
+      curr = curr->getNext();
+      back->setNext(curr);
+      item = prev->getItem();
+      delete prev;
+      sze--;
+     }
+
+>>>>>>> 43106a3d146df4d70abd34eafdde7e7d0911a4e9
     return item;
 }
 
