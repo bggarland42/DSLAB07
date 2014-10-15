@@ -16,7 +16,6 @@ class Problem22_1 : public MultiVarFunction
       double integrate(int level);
       void setLowerLimit(double a);
       void setUpperLimit(double b);
-
 };
 
 #endif
